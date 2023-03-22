@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  rust_api_db:
+    container_name: rust_api_db
+    image: "postgres:12"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=salisu
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=rust_api_database
+    volumes:
+      - rust_api_data:/var/lib/postgresql/data
+volumes:
+  rust_api_data: {}
